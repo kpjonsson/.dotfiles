@@ -1,34 +1,33 @@
-### Command alias
+# list
 alias ls='/bin/ls -FG'
-alias ll="ls -lh"
-alias la="ls -lhGgoA"
 alias lp='ls -lrth'
+
+# line/field counts
 alias wcl='wc -l'
 alias wcc="awk -F'\t' '{print NF; exit}'"
 
 alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
 
-alias qs="qstat"
-alias tf="tail -f"
+# colorize grep
 alias grep='/usr/bin/grep --color=auto'
-alias grep='/usr/local/bin/ggrep --color=auto' # requires brew install grep to install GNU grep
-alias mkdir='mkdir -p' # make all necessary parent directories
-alias lS='less -S'
+
+# requires brew install grep to install GNU grep
+#alias grep='/usr/local/bin/ggrep --color=auto'
+
+# make all necessary parent directories
+alias mkdir='mkdir -p'
+
+# chop long lines in less
+alias lezz='less -S'
+
+# nice tabulatation
 alias l="(sed ':x s/\(^\|\t\)\t/\1 \t/; t x' | column -ts$'\t' | less -SFX)"
+
 alias where='readlink'
 
-### Software alias
-alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-alias R='R --no-save --no-restore-data'
+# colorize grex
+alias grex="grex -c"
 
-### Alias for cluster access
-#alias s2="ssh jonssonp@saba2.cbio.mskcc.org"
-#alias hal="ssh jonssonp@hal.cbio.mskcc.org"
-alias luna="ssh jonssonp@luna.cbio.mskcc.org"
-#alias s01="ssh jonssonp@s01.cbio.mskcc.org"
-alias sel="ssh jonssonp@selene.cbio.mskcc.org"
-alias juno="ssh jonssonp@juno.mskcc.org"
+# start R vanilla
+alias R='R --no-save --no-restore-data'
 

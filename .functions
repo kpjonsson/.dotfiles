@@ -3,12 +3,6 @@ connect () {
     $HOME/.dotfiles/.connect
     }
 
-### Make and cd into directory
-mcd () {
-    mkdir -p $1
-    cd $1
-    }
-
 ### Decompress from any format
 extract () {
    if [ -f $1 ] ; then
@@ -39,47 +33,4 @@ getcols() {
     else
         echo "'$1' is not a valid file!"
     fi
-}
-
-# Readlink
-function readlink() {
-  DIR=$(echo "${1%/*}")
-  (cd "$DIR" && echo "$(pwd -P)")
-}
-
-
-### Open Facets PNG from cluster
-open_facets() {
-        SSTRING=$1
-        FLIST=$(ls -t /ifs/res/taylorlab/impact_facets/facets_0.5.14/manifests/impact_facets_manifest*txt | cut -f1 | head -1)
-
-        MATCHES=$(grep "$SSTRING" $FLIST | cut -f2 | sort | uniq | wc -l)
-        if [ "$MATCHES" -gt 1 ]
-        then
-                echo "More than one match, specify sample"
-                return 1
-        fi
-
-        if [ "$MATCHES" -eq 0 ]
-        then
-                echo "No matches"
-                return 1
-        fi
-
-        SPATH=$(grep "$SSTRING" $FLIST | head -1)
-        SAMPLE=$(echo $SPATH | tr " " "\t" | cut -f2)
-        echo "Opening $SAMPLE"
-
-        SPATH=$(ls $(echo $SPATH | tr " " "\t" | cut -f8)*purity.CNCF.png)
-        echo "Path: $SPATH"
-        open $SPATH
-}
-
-# Get url to 12-245 bam file
-bam_url() {
-        BASE=$1
-        grep $BASE ~/luna/keys/key.txt | \
-                cut -f1,2 -d"," | \
-                sed -e 's:,:    /ifs/dmpshare/share/irb12_245/:g' \
-                -e 's/$/.bam/g'
 }

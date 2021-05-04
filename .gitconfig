@@ -2,7 +2,7 @@
 	name = kpjonsson
 	email = philip.jonsson@gmail.com
 [core]
-	excludesfile = /Users/jonssonp/.dotfiles/.git/.gitignore_global
+	excludesfile = $HOME/.dotfiles/.git/.gitignore_global
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

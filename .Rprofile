@@ -24,17 +24,8 @@ Sys.setenv(TAR = '/usr/bin/tar')
 auto_loads = c(
         'plyr',
         'tidyverse',
-        'tidyselect',
-        'lubridate',
-        'forcats',
-        'stringr',
-        'reshape2',
-        'kpjmisc',
-        'egg',
-        'googlesheets',
         'janitor',
         'patchwork',
-        'shades',
         'fs',
         'datapasta'
         )
@@ -66,16 +57,8 @@ like <- function(vector, pattern)
 '%l%' = '%like%'
 
 #### Convenience functions
-len = length
 lu = function(vector_in) { length(unique(vector_in ))}
-filter = dplyr::filter
-count = dplyr::count
-fread = function(x, ...) as_tibble(data.table::fread(x, ...))
-#fwrite = data.table::fwrite
 
 # Set ggplot theme
 #theme_set(theme_bwmin)
 cat('...done!\n')
-
-# Set python version in reticulate
-Sys.setenv(RETICULATE_PYTHON = '/usr/local/bin/python2')

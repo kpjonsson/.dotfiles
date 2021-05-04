@@ -1,7 +1,7 @@
 ### Source all dotfiles
 
 for DOTFILE in $(find $HOME/.dotfiles -maxdepth 1 -name ".[^.]*" \
-	! \( -name ".bash_profile" \
+	! \( -name ".zprofile" \
 	-o -name ".Rprofile" \
 	-o -name ".gitconfig" \
 	-o -name ".vimrc" \) \
