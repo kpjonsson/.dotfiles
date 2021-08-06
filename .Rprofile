@@ -23,11 +23,13 @@ Sys.setenv(TAR = '/usr/bin/tar')
 ### Start-up items
 auto_loads = c(
         'plyr',
+        'tibble',
         'tidyverse',
         'janitor',
         'patchwork',
         'fs',
-        'datapasta'
+        'datapasta',
+        'vroom'
         )
 
 options(
@@ -58,6 +60,16 @@ like <- function(vector, pattern)
 
 #### Convenience functions
 lu = function(vector_in) { length(unique(vector_in ))}
+len = length
+
+# Safe header on wide objects
+# h <- function(x, ...) {
+#   if (ncol(x) > 30) {
+#     x[1:10, 1:10]
+#   } else {
+#     head(x, ...)
+#   }
+# }
 
 # Set ggplot theme
 #theme_set(theme_bwmin)

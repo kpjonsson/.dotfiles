@@ -34,3 +34,18 @@ getcols() {
         echo "'$1' is not a valid file!"
     fi
 }
+
+# body function to skip header line
+body() {
+    IFS= read -r header
+    printf '%s\n' "$header"
+    "$@"
+}
+
+# activate venv by name
+activate() {
+    env=$1
+    echo "Activating ${env}"
+    . ~/venv/${env}/bin/activate
+}
+

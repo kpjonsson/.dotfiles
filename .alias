@@ -31,3 +31,5 @@ alias grex="grex -c"
 # start R vanilla
 alias R='R --no-save --no-restore-data'
 
+# glances theme for light background
+alias glances='glances --theme-white'

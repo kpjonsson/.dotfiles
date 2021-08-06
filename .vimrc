@@ -7,6 +7,7 @@ set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
+set noeb vb t_vb=
 set autoread                    "Reload files changed outside vim
 set laststatus=2                "Always display the status line
 set hidden                      "Hide buffer instead of closing it
@@ -19,13 +20,13 @@ highlight ColorColumn ctermbg=grey guibg=grey
 
 "Load pathogen
 "execute pathogen#infect('~/.vim/bundle/{}')
-call pathogen#infect()
-call pathogen#helptags()
+"call pathogen#infect()
+"call pathogen#helptags()
 
 "Colors!
 syntax enable
 filetype plugin indent on
-colorscheme sprinkles
+"colorscheme sprinkles
 
 "Fix tabs and indentation
 set autoindent
