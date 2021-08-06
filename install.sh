@@ -8,6 +8,7 @@ fi
 
 # Symlink .dotfiles to $HOME
 ln -s $HOME/.dotfiles/.zprofile $HOME
+ln -s $HOME/.dotfiles/.zshrc $HOME
 ln -s $HOME/.dotfiles/.Rprofile $HOME
 ln -s $HOME/.dotfiles/.gitconfig $HOME
 ln -s $HOME/.dotfiles/.vimrc $HOME
