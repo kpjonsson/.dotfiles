@@ -1,6 +1,10 @@
 # list
-alias ls='/bin/ls -FG'
-alias lp='ls -lrth'
+#alias ls='/bin/ls -FG'
+#alias ls='gls --color=always -FG'
+# above is set in $HOME/.oh-my-zsh/lib/theme-and-appearance.zsh
+#alias lp='ls -lrth'
+alias lp='exa -l --sort newest'
+
 
 # line/field counts
 alias wcl='wc -l'
@@ -21,7 +25,9 @@ alias mkdir='mkdir -p'
 alias lezz='less -S'
 
 # nice tabulatation
-alias l="(sed ':x s/\(^\|\t\)\t/\1 \t/; t x' | column -ts$'\t' | less -SFX)"
+#alias l="(sed ':x s/\(^\|\t\)\t/\1 \t/; t x' | column -ts$'\t' | less -SFX)"
+alias l="(sed 's/\(^\|\t\)\t/\1 \t/' | column -ts$'\t' | less -SFX)"
+
 
 alias where='readlink'
 
@@ -33,3 +39,10 @@ alias R='R --no-save --no-restore-data'
 
 # glances theme for light background
 alias glances='glances --theme-white'
+
+# gnucore
+alias zcat='gzcat'
+
+# radian for R
+alias r="radian"
+

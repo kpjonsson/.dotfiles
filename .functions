@@ -49,3 +49,16 @@ activate() {
     . ~/venv/${env}/bin/activate
 }
 
+# Pre-signed link to CCLE RNA-seq bam in S3
+ccle_rna() {
+    cell_line=$1
+    line=($(grep $1 $HOME/data/CCLE/gdc_bams_bai_pairs.rna.tsv))
+    bam_path=${line[2]}
+    bam=$(basename $bam_path)
+    bam_dir=$(basename $(dirname ${bam_path}))
+    bai_path=${line[3]}
+    bai=$(basename $bai_path)
+    bai_dir=$(basename $(dirname ${bai_path}))
+    echo "https://gdc-ccle-2-open.s3.amazonaws.com/${bam_dir}/${bam}"
+    echo "https://gdc-ccle-2-open.s3.amazonaws.com/${bai_dir}/${bai}"
+}

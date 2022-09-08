@@ -2,15 +2,16 @@
 set completion-ignore-case on
 
 # List all matches in case multiple possible completions are possible
-#set show-all-if-ambiguous on
+##set show-all-if-ambiguous on
 set show-all-if-unmodified on
 
-# Case-insensitive globbing (used in pathname expansion)
-setopt NO_CASE_GLOB
+# Case-insensitive globbing used in pathname expansion
+#unsetopt CASE_GLOB
 
-# Autocorrect typos in path names when using `cd`
-setopt CORRECT
-setopt CORRECT_ALL
+# Autocorrect typos in path names when using cd
+#unsetopt no_correct
+#unsetopt no_correct_all
 
 # auto-cd when prefix is missing
-setopt AUTO_CD
+#unsetopt NO_AUTO_CD
+

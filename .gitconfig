@@ -1,8 +1,9 @@
 [user]
-	name = kpjonsson
-	email = philip.jonsson@gmail.com
+	name = philip-scorpiontx
+	email = philip@scorpiontx.com
 [core]
 	excludesfile = $HOME/.dotfiles/.git/.gitignore_global
+	pager = delta
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge --skip -- %f
@@ -10,3 +11,14 @@
 	required = true
 [credential]
 	helper = osxkeychain
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	syntax-theme = GitHub
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
